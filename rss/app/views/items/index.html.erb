@@ -1,33 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<%= button_to feed_items_path(feed: @feed, :format => "json"), class: "btn btn-default btn-sm" do %>
+    JSON
+<% end %>
+<%= button_to :back, class: "btn btn-default btn-sm" do %>
+    Back
+<% end %>
+
 <h1>Listing Items</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= strip_tags(item.description) %></td>
-        <td><%= item.link %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% @feed.items.each do |item| %>
-    <%= item.title %>
-    <%= strip_tags(item.description) %>
-    <%= link_to item.link, item.link %>
-    <br><br>
+<% @items.each do |item| %>
+  <h2><%= item.title %></h2>
+  <div class = "wrapper">
+    <p class="demo-1"><%= strip_tags(item.description) %></p>
+  </div>
 <% end %>
+
+

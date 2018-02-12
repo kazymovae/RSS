@@ -2,13 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-  setInterval(alertToUpdateFeeds, 10000)
+#jQuery ->
+#  setInterval(alertToUpdateFeeds, 10000)
 
-alertToUpdateFeeds =->
-  $.ajax
-    url: "update_feeds"
-    success: (data) ->
-      console.log "Success"
-    error: (ts) ->
-      console.log ts.responseText
+#alertToUpdateFeeds =->
+#  $.ajax
+#    url: "update_feeds"
+#    success: (data) ->
+#      console.log "Success"
+#    error: (ts) ->
+#     console.log ts.responseText

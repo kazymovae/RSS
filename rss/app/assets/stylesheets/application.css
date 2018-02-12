@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+/* the styles for the HTML elements */
+body {
+    margin-top: 0;
+    background-color: rgb(128, 141, 159);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-size: 150%;
+    margin: 0;
+    padding: .5em 0 .25em;
+    color: rgb(205, 163, 94);
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+br {
+    clear: left;
+}
+p {
+    margin: 0;
+    padding-bottom: .5em;
+}
+select {
+    width: 8em;
+}
+ 
+label {
+    width: 5em;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: .5em;
+    text-align: right;
+}
+
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666; 
+        border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+
+}
+
+
+/* the styles for the div tags that divide the page into sections */
+#page {
+    width: 920px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid rgb(119, 75, 77);
+}
+#header {
+    margin: 0;
+    border-bottom: 2px solid rgb(119, 75, 77);
+    padding: .5em 2em;
+}
+#header h1 {
+    margin: 0;
+    padding: .5em 0;
+    color: black;
+}
+#main {
+    margin: 0;
+    padding: .5em 2em 2em;
+}
+#right {
+    float:right;
+    }
+
+

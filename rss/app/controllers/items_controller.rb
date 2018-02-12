@@ -6,11 +6,16 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+
   end
 
   # GET /items/new

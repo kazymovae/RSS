@@ -1,3 +1,20 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  	padding: 20px;
+  	background: #eaeaea;
+  	max-width: 800px;
+  	margin: 50px auto;
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+
+}
+  
+.demo-1 {
+  	text-overflow: hidden;
+	max-width: 50ch;
+    word-wrap:break-word;
+}
