@@ -9,7 +9,11 @@
 <body>
 <div id="page">
     <div id="header">
+    <% if current_page?(feeds_path()) %>
     	<h1>RSS</h1>
+    	<% else %>
+    	<h1><%= @feed.title %></h1>
+    	<% end %>
     </div>    
 
 <div id="main">

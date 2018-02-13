@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order("created_at DESC")
     respond_to do |format|
       format.html
       format.json
