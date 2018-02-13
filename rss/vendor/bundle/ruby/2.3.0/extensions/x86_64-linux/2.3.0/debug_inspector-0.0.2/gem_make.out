@@ -1,0 +1,15 @@
+current directory: /share/home/ekazymov/RSS/rss/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/usr/local/rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20180213-69451-ly5c4t.rb extconf.rb
+creating Makefile
+
+current directory: /share/home/ekazymov/RSS/rss/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /share/home/ekazymov/RSS/rss/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /share/home/ekazymov/RSS/rss/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20180213-69451-eklm09

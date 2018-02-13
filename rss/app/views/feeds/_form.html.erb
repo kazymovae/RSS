@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  Link: <%= f.text_field :link %>
-
+    <div class = "form-group col-lg-1">
+        <%= f.label :link %>
+        <%= f.text_field :link, required: "required", class: 'form-control truncate-50' %>
+    </div>
+    <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>

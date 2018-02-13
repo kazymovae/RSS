@@ -37,10 +37,10 @@ class FeedsController < ApplicationController
     end
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to feeds_path(),  notice: 'Feed was successfully created.' }
         format.json { render :show, status: :created, location: @feed }
       else
-        format.html { render :new }
+        format.html { redirect_to feeds_path(), notice: @feed.errors.full_messages.join(", ")}
         format.json { render json: @feed.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +51,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
+        format.html { redirect_to feeds_path(), notice: 'Feed was successfully updated.' }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit }

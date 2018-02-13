@@ -31,9 +31,9 @@ namespace :update do
     when 0
       puts " - > Nothing was retieved"
     when 1
-      puts " - > #{count} was retieved"
+      puts " - > #{count} item was retieved"
     else
-      puts " - > #{count} were retirved"
+      puts " - > #{count} items were retirved"
     end  
     puts " - > Done"
   end

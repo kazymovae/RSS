@@ -2,7 +2,11 @@
 
 <h1>Listing Feeds</h1>
 
-<table class="table table-striped">
+<br>
+  <%= button_to 'New Feed', new_feed_path, method: :get, class: "btn btn-default btn-sm" %>
+<br>
+
+<table class="table table-stripped">
   <thead>
   <tr>
     <th>Title</th>
@@ -15,10 +19,10 @@
   <tbody>
   <% @feeds.each do |feed| %>
       <tr>
-        <td><%= link_to feed.title, feed_items_path(feed)%></td>
+        <td><%= link_to feed.title, feed_items_path(feed) %></td>
         <td><%= feed.description %></td>
         <td><%= feed.link %></td>
-        <td><%= button_to 'Edit', edit_feed_path(feed) %></td>
+        <td><%= button_to 'Edit', edit_feed_path(feed), method: :get %></td>
         <td><%= button_to 'Destroy', feed, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
   <% end %>
@@ -27,7 +31,7 @@
 
 <br>
 
-<%= link_to 'New Feed', new_feed_path %>
+
 
 
 </div>
