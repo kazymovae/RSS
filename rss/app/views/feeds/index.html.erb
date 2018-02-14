@@ -3,32 +3,33 @@
 <h1>Listing Feeds</h1>
 
 <br>
-  <%= button_to 'New Feed', new_feed_path, method: :get, class: "btn btn-default btn-sm" %>
+<%= button_to 'New Feed', new_feed_path, method: :get, class: "btn btn-default btn-sm" %>
 <br>
 
-<table class="table table-stripped">
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Link</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @feeds.each do |feed| %>
+<% if !@feeds.blank? %>
+    <table class="gridtable">
+      <thead>
       <tr>
-        <td><%= link_to feed.title, feed_items_path(feed) %></td>
-        <td><%= feed.description %></td>
-        <td><%= feed.link %></td>
-        <td><%= button_to 'Edit', edit_feed_path(feed), method: :get %></td>
-        <td><%= button_to 'Destroy', feed, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Link</th>
+        <th colspan="3"></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
 
+      <tbody>
+      <% @feeds.each do |feed| %>
+          <tr>
+            <td><%= link_to feed.title, feed_items_path(feed) %></td>
+            <td><%= feed.description %></td>
+            <td><%= feed.link %></td>
+            <td><%= button_to 'Edit', edit_feed_path(feed), method: :get %></td>
+            <td><%= button_to 'Destroy', feed, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
 <br>
 
 

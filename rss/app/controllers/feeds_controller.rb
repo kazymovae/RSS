@@ -8,15 +8,6 @@ class FeedsController < ApplicationController
   # GET /feeds.json
   def index
     @feeds = Feed.all
-    @url = 'http://rss.cnn.com/rss/cnn_travel.rss'
-    open(@url) do |rss|
-      @feed_found = RSS::Parser.parse(rss)
-    end
-  end
-
-  # GET /feeds/1
-  # GET /feeds/1.json
-  def show
   end
 
   # GET /feeds/new
@@ -70,23 +61,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  def update_feeds
-    Feed.all.each do |feed|
-      url = feed.link
-      open(url) do |rss|
-        rss = RSS::Parser.parse(rss)
-        puts "Title: #{rss.channel.title}"
-        rss.items.each do |item|
-          puts "Item: #{item.title}"
-          item = Item.create(feed_id: feed.id, title: item.title, description: item.description, link: item.link)
-          item.save
-        end
-      end
-    end
-    respond_to do |format|
-      format.js { flash.now[:notice] = "Feeds were updated." }
-    end
-  end
 
   private
   # Use callbacks to share common setup or constraints between actions.

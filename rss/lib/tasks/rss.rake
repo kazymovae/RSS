@@ -1,9 +1,6 @@
 require 'rss'
 require 'open-uri'
-
-def strip_html_tags(string)
-    ActionView::Base.full_sanitizer.sanitize(string)
-end
+require 'tasks/rss_helper'
 
 namespace :update do
 
@@ -17,11 +14,11 @@ namespace :update do
         rss = RSS::Parser.parse(rss)
         puts "Title: #{rss.channel.title}"
         rss.items.each do |item|
-          item_exists = Item.find_by(title: item.title, description: strip_html_tags(item.description), link: item.link)
+          item_exists = Item.find_by(title: item.title, description: RssHelper.strip_html_tags(item.description), link: item.link)
           if item_exists.blank?
             puts "Item: #{item.title}"
             count += 1
-            item = Item.create(feed_id: feed.id, title: item.title, description: strip_html_tags(item.description), link: item.link)
+            item = Item.create(feed_id: feed.id, title: item.title, description: RssHelper.strip_html_tags(item.description), link: item.link)
             item.save
           end  
         end
