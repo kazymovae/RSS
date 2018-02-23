@@ -1,0 +1,62 @@
+current directory: /Users/Genia/Desktop/SAS/RSS/rss/vendor/bundle/ruby/2.3.0/gems/mysql2-0.2.6/ext/mysql2
+/Users/Genia/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20180215-27048-1w412jw.rb extconf.rb
+Ignoring binding_of_caller-0.7.2 because its extensions are not built.  Try: gem pristine binding_of_caller --version 0.7.2
+Ignoring byebug-9.0.6 because its extensions are not built.  Try: gem pristine byebug --version 9.0.6
+Ignoring debug_inspector-0.0.2 because its extensions are not built.  Try: gem pristine debug_inspector --version 0.0.2
+Ignoring json-1.8.6 because its extensions are not built.  Try: gem pristine json --version 1.8.6
+Ignoring mysql2-0.4.3 because its extensions are not built.  Try: gem pristine mysql2 --version 0.4.3
+Ignoring nokogiri-1.7.0.1 because its extensions are not built.  Try: gem pristine nokogiri --version 1.7.0.1
+Ignoring sqlite3-1.3.13 because its extensions are not built.  Try: gem pristine sqlite3 --version 1.3.13
+checking for rb_thread_blocking_region()... no
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for mysqld_error.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/Genia/Desktop/SAS/RSS/rss/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-13/2.3.0-static/mysql2-0.2.6/mkmf.log
+
+current directory: /Users/Genia/Desktop/SAS/RSS/rss/vendor/bundle/ruby/2.3.0/gems/mysql2-0.2.6/ext/mysql2
+make "DESTDIR=" clean
+
+current directory: /Users/Genia/Desktop/SAS/RSS/rss/vendor/bundle/ruby/2.3.0/gems/mysql2-0.2.6/ext/mysql2
+make "DESTDIR="
+compiling client.c
+In file included from client.c:1:
+In file included from ./mysql2_ext.h:29:
+In file included from ./client.h:11:
+/Users/Genia/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/backward/rubysig.h:14:2: warning: rubysig.h is obsolete [-W#warnings]
+#warning rubysig.h is obsolete
+ ^
+In file included from client.c:1:
+In file included from ./mysql2_ext.h:29:
+./client.h:13:14: warning: redefinition of typedef 'rb_unblock_function_t' is a C11 feature [-Wtypedef-redefinition]
+typedef void rb_unblock_function_t(void *);
+             ^
+/Users/Genia/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/intern.h:907:14: note: previous definition is here
+typedef void rb_unblock_function_t(void *);
+             ^
+In file included from client.c:1:
+In file included from ./mysql2_ext.h:29:
+./client.h:14:15: warning: redefinition of typedef 'rb_blocking_function_t' is a C11 feature [-Wtypedef-redefinition]
+typedef VALUE rb_blocking_function_t(void *);
+              ^
+/Users/Genia/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/intern.h:908:15: note: previous definition is here
+typedef VALUE rb_blocking_function_t(void *);
+              ^
+In file included from client.c:1:
+In file included from ./mysql2_ext.h:29:
+./client.h:23:3: error: use of undeclared identifier 'TRAP_BEG'
+  TRAP_BEG;
+  ^
+./client.h:25:3: error: use of undeclared identifier 'TRAP_END'
+  TRAP_END;
+  ^
+client.c:313:16: warning: implicit declaration of function 'rb_thread_select' is invalid in C99 [-Wimplicit-function-declaration]
+      retval = rb_thread_select(fd + 1, &fdset, NULL, NULL, NULL);
+               ^
+4 warnings and 2 errors generated.
+make: *** [client.o] Error 1
+
+make failed, exit code 2

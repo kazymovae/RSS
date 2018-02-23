@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.where(feed: @feed).order("created_at DESC")
     respond_to do |format|
       format.html
       format.json

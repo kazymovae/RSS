@@ -4,7 +4,7 @@ module ItemsHelper
   #/./ - Any character except a newline.
   #{n,m} - At least n and at most m times
   #\Z - Matches end of string. If string ends with a newline, it matches just before newline
-  def wrap(s, width=78)
+  def wrap(s, width=100)
     s.gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1<br>").html_safe
   end
 
